@@ -5,20 +5,13 @@ import Notification from '../../components/Notification/Notification';
 import Loader from '../../components/Loader/Loader';
 import FilmInfo from '../../components/FilmInfo/FilmInfo';
 import BackButton from '../../components/BackButton/BackButton';
-import {
-  LinksWrapper,
-  LinkItem,
-} from './MovieDetails.styled'
-
+import { LinksWrapper, LinkItem } from './MovieDetails.styled';
 
 const FilmDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const [film, setFilm] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(film);
-  console.log(movieId);
 
   useEffect(() => {
     if (!movieId) return;
@@ -27,7 +20,6 @@ const FilmDetails = () => {
     const retrieveData = async () => {
       try {
         const retrievedFilm = await fetchSearch(movieId);
-        console.log(retrievedFilm);
         setFilm(retrievedFilm);
       } catch ({ message }) {
         Notification(message);

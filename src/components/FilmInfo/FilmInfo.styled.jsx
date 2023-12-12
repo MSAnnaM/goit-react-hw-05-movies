@@ -49,7 +49,7 @@ export const GenreList = styled.div`
   display: flex;
   flex-wrap: wrap;
   p {
-    background-color: #8a2be2; /* Blue Violet for genre background */
+    background-color: #8a2be2;
     color: #fff;
     border-radius: 4px;
     padding: 5px 10px;

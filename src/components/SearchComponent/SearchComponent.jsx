@@ -3,13 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
 
 export const SearchComponent = ({ onSearch }) => {
-  const [searchParams, updateSearchParams] = useSearchParams();
-  const [searchValue, updateSearchValue] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchValue, setSearchValue] = useState('');
 
   const handleFormSubmit = e => {
     e.preventDefault();
     console.log(searchParams);
-    updateSearchParams({ query: searchValue });
+    setSearchParams({ query: searchValue });
     if (searchValue.trim() === '') {
       return;
     }
@@ -17,7 +17,7 @@ export const SearchComponent = ({ onSearch }) => {
   };
 
   const handleInputChange = e => {
-    updateSearchValue(e.currentTarget.value);
+    setSearchValue(e.currentTarget.value);
   };
 
   return (

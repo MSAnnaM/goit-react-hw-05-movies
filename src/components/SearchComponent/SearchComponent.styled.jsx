@@ -24,7 +24,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   padding: 10px 15px;
-  background-color: violet;
+  background-color: #9400D3;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -32,6 +32,6 @@ export const Button = styled.button`
   font-size: 16px;
   
   &:hover {
-    background-color: darkviolet;
+    background-color: #4B0082;
   }
 `;

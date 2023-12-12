@@ -22,11 +22,11 @@ export const HomePageLink = styled(Link)`
   text-decoration: none;
   font-size: 1.2em;
   padding: 10px;
-  background-color: rgba(138, 43, 226, 0.7);
+  background-color: rgba(72, 61, 139, 0.7);
   border-radius: 4px;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: rgba(72, 61, 139, 0.7);
+    background-color: rgba(72, 61, 139);
   }
 `;

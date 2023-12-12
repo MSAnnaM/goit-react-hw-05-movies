@@ -4,7 +4,7 @@ const Notification = message => {
   Notify.init({
     backOverlay: true,
     info: {
-      background: '#1cb114',
+      background: '#8a2be2',
     },
   });
 

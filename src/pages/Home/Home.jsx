@@ -1,25 +1,25 @@
 import { Main, Title } from './Home.styled';
-import MoviesList from '../../components/MoviesList/MoviesList'
+import MoviesList from '../../components/MoviesList/MoviesList';
 import { useState, useEffect } from 'react';
 import { fetchTrend } from 'services/api';
 import Notification from '../../components/Notification/Notification';
 import Loader from '../../components/Loader/Loader';
 
 const Home = () => {
-  const [moviesData, updateMoviesData] = useState([]);
-  const [isLoading, updateLoadingStatus] = useState(true);
+  const [moviesData, setMoviesData] = useState([]);
+  const [isLoading, setLoadingStatus] = useState(true);
 
   useEffect(() => {
-    updateLoadingStatus(true);
+    setLoadingStatus(true);
 
     const getTrendingMovies = async () => {
       try {
         const movies = await fetchTrend();
-        updateMoviesData(movies);
+        setMoviesData(movies);
       } catch ({ message }) {
         Notification(message);
       } finally {
-        updateLoadingStatus(false);
+        setLoadingStatus(false);
       }
     };
     getTrendingMovies();

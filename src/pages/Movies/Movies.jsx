@@ -7,24 +7,23 @@ import { fetchMovieDetailsData } from '../../services/api';
 import Notification from '../../components/Notification/Notification';
 import PaginationListComponent from '../../components/PaginationListComponent/PaginationListComponent';
 
-
 const MoviesPage = () => {
-  const [searchParams, updateSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  const [moviesData, updateMoviesData] = useState([]);
-  const [isLoading, updateLoadingStatus] = useState(false);
-  const [currentPage, updateCurrentPage] = useState(1);
-  const [totalPages, updateTotalPages] = useState(0);
+  const [moviesData, setMoviesData] = useState([]);
+  const [isLoading, setLoadingStatus] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   const handleSearch = query => {
-    updateCurrentPage(1);
-    updateSearchParams({ query: query, page: currentPage });
+    setCurrentPage(1);
+    setSearchParams({ query: query, page: currentPage });
   };
 
   useEffect(() => {
     const searchQuery = searchParams.get('query') || '';
     if (!searchQuery) return;
-    updateLoadingStatus(true);
+    setLoadingStatus(true);
 
     const fetchSearchMovies = async () => {
       try {
@@ -33,13 +32,13 @@ const MoviesPage = () => {
           currentPage
         );
 
-        updateMoviesData(results);
-        updateCurrentPage(page);
-        updateTotalPages(total_pages);
-        updateSearchParams({ query: searchQuery, page: currentPage });
+        setMoviesData(results);
+        setCurrentPage(page);
+        setTotalPages(total_pages);
+        setSearchParams({ query: searchQuery, page: currentPage });
 
         if (!results.length) {
-          updateSearchParams({});
+          setSearchParams({});
           return Notification(`Sorry, no movies found on query ${searchQuery}`);
         }
 
@@ -47,11 +46,11 @@ const MoviesPage = () => {
       } catch ({ message }) {
         Notification(message);
       } finally {
-        updateLoadingStatus(false);
+        setLoadingStatus(false);
       }
     };
     fetchSearchMovies();
-  }, [searchParams, currentPage, updateSearchParams]);
+  }, [searchParams, currentPage, setSearchParams]);
 
   return (
     <>
@@ -59,10 +58,16 @@ const MoviesPage = () => {
       <SearchComponent onSearch={handleSearch} />
 
       {totalPages > 1 && (
-        <PaginationListComponent totalPages={totalPages} currentPage={currentPage} onPageChange={updateCurrentPage} />
+        <PaginationListComponent
+          totalPages={totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
       )}
 
-      {moviesData.length > 0 && <MovieList movies={moviesData} location={location} />}
+      {moviesData.length > 0 && (
+        <MovieList movies={moviesData} location={location} />
+      )}
     </>
   );
 };

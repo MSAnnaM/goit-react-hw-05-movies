@@ -4,7 +4,7 @@ import { NavLink as Link } from 'react-router-dom';
 export const Header = styled.header`
   width: 100%;
   padding: 20px;
-  background-color: violet; 
+  background-color:  rgba(138, 43, 226, 0.7);
   color: white;
   display: flex;
   justify-content: center;

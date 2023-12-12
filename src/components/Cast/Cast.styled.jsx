@@ -7,9 +7,9 @@ margin: 15px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
-  background-color: #8a2be2; /* Blue Violet background */
+  background-color: #8a2be2;
   border-radius: 8px;
-  color: #fff; /* White text color */
+  color: #fff;
 `;
 
 export const ActorItem = styled.div`
@@ -24,19 +24,19 @@ export const ActorItem = styled.div`
   h1 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #fff; /* White text color */
+    color: #fff; 
   }
 
   h3 {
     font-size: 1em;
-    color: #ddd; /* Lighter text color */
+    color: #ddd; 
   }
 `;
 
 export const NoCastInfo = styled.div`
   text-align: center;
   padding: 20px;
-  background-color: rgba(138, 43, 226, 0.7); /* Slightly transparent Blue Violet background */
+  background-color: rgba(138, 43, 226, 0.7); 
   border-radius: 8px;
-  color: #fff; /* White text color */
+  color: #fff;
 `;

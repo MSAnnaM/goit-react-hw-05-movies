@@ -8,12 +8,8 @@ const LayoutComponent = () => {
     <>
       <Header>
         <Nav>
-          <NavLink to="/">
-            Home
-          </NavLink>
-          <NavLink to="/movies">
-            Movies
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
         </Nav>
       </Header>
       <Suspense fallback={<Loader />}>

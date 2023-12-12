@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Loader from "../../components/Loader/Loader";
-import { getReview } from "services/api"; 
-import Notification from "components/Notification/Notification";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Loader from '../../components/Loader/Loader';
+import { getReview } from 'services/api';
+import Notification from 'components/Notification/Notification';
 import {
   FeedbackWrapper,
   FeedbackList,
@@ -10,7 +10,7 @@ import {
   FeedbackAuthor,
   FeedbackText,
   NoFeedbackMsg,
-} from "./Reviews.styled";
+} from './Reviews.styled';
 
 const Feedback = () => {
   const { movieId } = useParams();
@@ -40,9 +40,7 @@ const Feedback = () => {
         <FeedbackList>
           {filmReview.map(({ id, author, content }) => (
             <FeedbackItem key={id}>
-              <FeedbackAuthor>
-                {author}
-              </FeedbackAuthor>
+              <FeedbackAuthor>{author}</FeedbackAuthor>
               <FeedbackText>{content}</FeedbackText>
             </FeedbackItem>
           ))}

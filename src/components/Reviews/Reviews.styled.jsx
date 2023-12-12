@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export const FeedbackWrapper = styled.div`
 margin: 15px;
   padding: 20px;
-  background-color: #8a2be2; /* Blue Violet background */
+  background-color: #8a2be2;
   border-radius: 8px;
   color: #fff; /* White text color */
 `;
@@ -27,7 +27,7 @@ export const FeedbackText = styled.p`
 export const NoFeedbackMsg = styled.div`
   text-align: center;
   padding: 20px;
-  background-color: rgba(138, 43, 226, 0.7); /* Slightly transparent Blue Violet background */
+  background-color: rgba(138, 43, 226, 0.7);
   border-radius: 8px;
-  color: #fff; /* White text color */
+  color: #fff;
 `;

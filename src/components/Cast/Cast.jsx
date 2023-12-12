@@ -1,8 +1,8 @@
-import { ActorItem, ActorList, NoCastInfo } from "./Cast.styled"
-import { useParams } from "react-router-dom";
+import { ActorItem, ActorList, NoCastInfo } from './Cast.styled';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getCast } from "services/api";
-import Notification from "components/Notification/Notification";
+import { getCast } from 'services/api';
+import Notification from 'components/Notification/Notification';
 import defaultActor from '../../images/default-actor.jpg';
 
 const Actor = () => {
@@ -15,7 +15,7 @@ const Actor = () => {
         const response = await getCast(movieId);
         setFilmCast(response.cast);
       } catch ({ message }) {
-        Notification(message)
+        Notification(message);
       }
     };
 
